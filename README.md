@@ -72,6 +72,45 @@ To add the discussed changes, the following steps were taken:
 
 ---
 
-## Problems
+## Problems 1
 
-Fork was to old - some workflows showed errors. Need to rebase
+Fork was to old -> some workflows showed errors. Need to rebase:
+
+Switch from `feature` to `master` branch <br/>
+```
+git checkout master
+```
+
+Add the original remote <br/>
+```
+git remote add upstream https://github.com/dealii/dealii
+```
+
+Update files <br/>
+```
+git pull upstream
+git push
+```
+
+Switch back to the `feature` branch and rebase <br/>
+```
+git checkout darth-branch
+git rebase master
+git push
+```
+---
+
+## Problems 2
+
+:x: Many unnecessary commits during the work on the issue <br/>
+:heavy_check_mark: Add entirely new commit that incorporates all changes
+
+```bash
+git reset --soft master
+```
+
+---
+
+
+
+
