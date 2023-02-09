@@ -1,4 +1,43 @@
-# SSE_Contribution
+---
+marp: true
+title: SSE Contribution
+description: by Vadim Gallyamov
+theme: gaia
+paginate: true
+_paginate: false
+---
+
+<style>
+section {
+  background: black;
+  color: white;
+  font-size: 26px;
+  padding: 40px;
+}
+
+h1 {
+  color: orange;
+  text-align: center 
+}
+
+h2 {
+  color: orange;
+  text-align: left 
+}
+
+strong {
+  font-weight: bold;
+  color: orange;
+}
+  
+code {
+  color: orange;
+  background: black;
+}
+
+</style>
+
+# SSE Contribution to deal.II
 
 by Darth-Veidim
 
@@ -48,9 +87,9 @@ To contribute, the following steps were taken:
 
 ### Problem:
 
-:turtle: `std::pow(x,p)` <sup>1</sup> is computationally more expensive than `p * p`
+:turtle: `std::pow(x,p)` <sup>1</sup> is computationally more expensive than `x * x`
 
-In the deal.II code there exists a [function](https://www.dealii.org/current/doxygen/deal.II/namespaceUtilities.html#a834c6b595ada6f8e73c78d9bbd8ec551) `Utilities::fixed<p>(x)` that performs _n_ multiplications instead of _pow_ <br/> 
+In the deal.II code there exists a [function](https://www.dealii.org/current/doxygen/deal.II/namespaceUtilities.html#a834c6b595ada6f8e73c78d9bbd8ec551) `Utilities::fixed_power<p>(x)` that performs _n_ multiplications instead of _pow_ <br/> 
 
 ### Solution:
 
