@@ -1,45 +1,31 @@
 ---
-marp: true
-title: SSE Contribution
-description: by Vadim Gallyamov
-theme: gaia
-paginate: true
-_paginate: false
+type: slide
+slideOptions:
+  transition: slide
+  width: 1400
+  height: 900
+  margin: 0.1
 ---
 
 <style>
-section {
-  background: black;
-  color: white;
-  font-size: 26px;
-  padding: 40px;
-}
-
-h1 {
-  color: orange;
-  text-align: center 
-}
-
-h2 {
-  color: orange;
-  text-align: left 
-}
-
-strong {
+  .reveal strong {
   font-weight: bold;
-  color: orange;
-}
-  
-code {
-  color: orange;
-  background: black;
-}
-
+      color: orange;
+  }
+  .reveal p {
+      text-align: left;
+  }
+  .reveal section h1 {
+      color: orange;
+  }
+  .reveal section h2 {
+      color: orange;
+  }
 </style>
 
 # SSE Contribution to deal.II
 
-by Darth-Veidim
+by Vadim Gallyamov
 
 ---
 
@@ -103,10 +89,10 @@ In the deal.II code there exists a [function](https://www.dealii.org/current/dox
 
 To add the discussed changes, the following steps were taken:
 
-:heavy_check_mark: Fork the deal.II repository, clone it locally <br/> 
-:heavy_check_mark: Find all suitable files for contribution with `egrep -r 'pow.*, [2345](\.0)?\)' include/ source/` <br/> 
-:heavy_check_mark: Implement changes, run `indent` check <br/> 
-:heavy_check_mark: Add, commit, push, create pull request <br/> 
+- Fork the deal.II repository, clone it locally <br/> 
+- Find all suitable files for contribution with <br/>
+- Implement changes, run `indent` check <br/> 
+- Add, commit, push, create pull request <br/> 
 :x: Go through tests in `Github Actions`
 
 ---
@@ -137,19 +123,19 @@ git checkout darth-branch
 git rebase master
 git push
 ```
+
 ---
 
 ## Problems 2
 
-:x: Many unnecessary commits during the work on the issue <br/>
-:heavy_check_mark: Add entirely new commit that incorporates all changes
+:broken_heart: Many unnecessary commits during the work on the issue <br/>
+:revolving_hearts: Add entirely new commit that incorporates all changes
 
 ```bash
 git reset --soft master
 ```
 
 ---
-
 
 
 
