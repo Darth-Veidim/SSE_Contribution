@@ -50,9 +50,28 @@ To contribute, the following steps were taken:
 
 :turtle: `std::pow(x,p)` <sup>1</sup> is computationally more expensive than `p * p`
 
+In the deal.II code there exists a [function](https://www.dealii.org/current/doxygen/deal.II/namespaceUtilities.html#a834c6b595ada6f8e73c78d9bbd8ec551) `Utilities::fixed<p>(x)` that performs _n_ multiplications instead of _pow_ <br/> 
+
 ### Solution:
 
-:rabbit2: Replace `std::pow` with multiplication
-
+:rabbit2: Replace `std::pow(x,p)` with `Utilities::fixed_power<p>(x)` <br/><br/> 
 
 <sup>1</sup> _with fixed integer exponent `p`_
+
+---
+
+## Procedure
+
+To add the discussed changes, the following steps were taken:
+
+:heavy_check_mark: Fork the deal.II repository, clone it locally <br/> 
+:heavy_check_mark: Find all suitable files for contribution with `egrep -r 'pow.*, [2345](\.0)?\)' include/ source/` <br/> 
+:heavy_check_mark: Implement changes, run `indent` check <br/> 
+:heavy_check_mark: Add, commit, push, create pull request <br/> 
+:x: Go through tests in `Github Actions`
+
+---
+
+## Problems
+
+Fork was to old - some workflows showed errors. Need to rebase
